@@ -1,3 +1,6 @@
 [submodule "hello_cargo"]
 	path = hello_cargo
 	url = ./hello_cargo
+[submodule "hello_carg"]
+	path = hello_carg
+	url = https://github.com/sankitshane/hello_cargo.git
