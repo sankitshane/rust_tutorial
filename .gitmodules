@@ -1,3 +1,0 @@
-[submodule "hello_cargo"]
-	path = hello_cargo
-	url = https://github.com/sankitshane/hello_cargo.git
