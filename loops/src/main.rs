@@ -1,21 +1,23 @@
 use std::io;
-use std::collections::HashMap;
 
 fn main() {
     println!("Working on mini projects");
+    println!("\n");
 
-    // println!("Project 1");
-    // println!("Convert fahrenheit_to_celsius");
-    // let temp = fahrenheit_to_celsius();
-    // println!("Temperture in Celsius: {temp} ");
+    println!("Project 1: Convert fahrenheit_to_celsius");
+    println!("\n");
+    let temp = fahrenheit_to_celsius();
+    println!("Temperture in Celsius: {temp} ");
+    println!("\n");
 
-    // println!("Project 2");
-    // println!("Get the nth fibonacci number");
-    // let res = fibonacci();
-    // println!("The nth fibonacci number is {res}");
+    println!("Project 2: Get the nth fibonacci number");
+    println!("\n");
+    let res = fibonacci();
+    println!("The nth fibonacci number is {res}");
+    println!("\n");
 
-    println!("project 3");
-    println!("Generate The Twelve Days of Christmas");
+    println!("project 3: Generate The Twelve Days of Christmas");
+    println!("\n");
     christmas_song();
 }
 
@@ -47,7 +49,7 @@ fn fibonacci() -> i32 {
 }
 
 fn christmas_song() {
-    fn generate_phase(n: i32){
+    fn first_line(n: usize){
         // sending n from 0-2
         let number = [
             "first",
@@ -55,19 +57,33 @@ fn christmas_song() {
             "third"
         ];
 
-        let mut num_name = HashMap::from([
-            ("Two", "turtle"),
-            ("Three", "French"),
-        ]);
-
-        let mut part = Vec::new();
-        part.push("On the {number[n]} day of Christmas".to_string());
-        part.push("my true love gave to me".to_string());
-        
-        part.push("A partridge in a pear tree.".to_string());
+        println!("On the {} day of Christmas", number[n]);
+        println!("my true love gave to me");
     }
     
+    fn middle_line(n: usize) {
+        let sentence = [
+            "Two turtle doves",
+            "Three French hens",
+            "Four calling birds",
+            "Five golden rings"
+        ];
+
+        for i in (0..n).rev() {
+            println!("{}", sentence[i]);
+        }
+
+
+    }
+
+    fn last_line() {
+        println!("A partridge in a pear tree.");
+    }
+
     for num in 0..3 {
-        generate_phase(num);
+        first_line(num);
+        middle_line(num);
+        last_line();
+        println!("\n");
     }
 }
